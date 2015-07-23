@@ -1,0 +1,25 @@
+<div class="">
+  {{timer-scrolllistener atTop=(action 'loadEarlier') atBottom=(action 'loadMore')}}
+
+  <ul>
+    {{#each days as |day|}}
+    <li class="day-{{day.dayOfWeek}} {{if day.isToday 'today'}} {{if day.isFirstOfMonth 'firstOfMonth'}}">
+      {{#if day.isFirstOfMonth}}
+      <h2 class="month">{{day.monthLabel}}</h2>
+      <h2 class="placeholder">&nbsp;</h2>
+      {{/if}}
+      <div class="centered mobile-width padded ">
+        <div class="day-info">
+          <label for="hours-{{day.dayValue}}">
+            <span class="day-name">{{day.dayName}}</span>
+            <span class="day-value">{{day.dayValue}}</span></label>
+          <span class="right-align">{{day.value}} h</span>
+        </div>
+        <div class="day-input">
+          {{timer-range-input label=day.dayValue value=day.value change=(action 'setHours')}}
+        </div>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</div>

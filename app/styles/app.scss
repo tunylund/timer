@@ -1,0 +1,66 @@
+@import "theme.scss";
+@import "range-input";
+@import "projects";
+
+body, html {
+  font-family: 'Palanquin', sans-serif;
+  background-color: $primary;
+  color: #fff;
+  font-weight: 100;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $primary;
+  border-bottom: solid 1px $primary1;
+  z-index: 10;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.content {
+  margin-top: 44px;
+}
+
+
+h1, h2, h3, h4 {
+  text-align: center;
+  font-weight: 100;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 1em 0;
+  text-transform: lowercase;
+}
+
+.padded {
+  padding: 0 1em;
+}
+
+.centered {
+  margin: auto;
+}
+
+.mobile-width {
+  width: 320px;
+}
+
+.right-align {
+  float: right;
+}
+

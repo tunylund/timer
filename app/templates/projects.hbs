@@ -1,0 +1,11 @@
+<div class="centered mobile-width padded ">
+
+  {{partial 'new-project'}}
+
+  {{#each model as |project|}}
+
+  <a class="project" href="/projects/{{project.slug}}"><h2>{{project.name}}</h2></a>
+
+  {{/each}}
+
+</div>
