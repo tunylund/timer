@@ -4,8 +4,6 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'timer',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
-    firebase: 'https://crackling-fire-5981.firebaseio.com',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -32,7 +30,7 @@ module.exports = function(environment) {
       'default-src': "'none'",
       'script-src': "'self'",
       'font-src': "'self' http://fonts.gstatic.com",
-      'connect-src': "'self' wss://*.firebaseio.com",
+      'connect-src': "'self'",
       'img-src': "'self'",
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'"

@@ -68,8 +68,8 @@ export default Ember.Component.extend({
   },
 
   unbindScrolling: function(){
-    Ember.$(window).on('scroll', this._scrolled);
-    Ember.$(document).on('touchmove', this._scrolled);
+    Ember.$(window).off('scroll', this._scrolled);
+    Ember.$(document).off('touchmove', this._scrolled);
   }
 
 

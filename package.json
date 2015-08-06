@@ -36,8 +36,7 @@
     "ember-composability": "0.0.4",
     "ember-data": "1.13.5",
     "ember-disable-proxy-controllers": "^1.0.0",
-    "ember-export-application-global": "^1.0.2",
-    "emberfire": "git+https://github.com/firebase/emberfire.git"
+    "ember-export-application-global": "^1.0.2"
   },
   "dependencies": {
     "ember-validations": "^2.0.0-alpha.4"

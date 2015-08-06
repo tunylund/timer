@@ -2,26 +2,26 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-  id: function() {
-    return "hours-" + this.get('label')
-  }.property('label'),
-
   className: function() {
     return "range-" + this.get('value') 
   }.property('value'),
 
-  name: function() {
-    return "hours[" + this.get('label') + "]"
-  }.property('label'),
+  input: function() {
+    var value = this.$('input[type=range]').val(),
+        description = this.$('input[type=text]').val()
+    this.set('value', value)
+    this.set('description', description)
+  },
 
-  actions: {
+  canNotFocus: function () {
+    return this.get('value') == 0
+  }.property('value'),
 
-    setHours: function() {
-      var label = this.get('label'),
-          value = this.get('value')
-      this.sendAction('change', label, value)
-    }
-
+  change: function() {
+    var label = this.get('label'),
+        value = this.$('input[type=range]').val(),
+        description = this.$('input[type=text]').val()
+    this.sendAction('onChange', label, value, description)
   }
 
 });

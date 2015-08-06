@@ -1,11 +1,7 @@
-{{#if newProjectFormIsVisible}}
 <div class="new-project">
-  <label for="new-project-name">Create a new project</label>
-  {{input id="new-project-name" type="text" value=newProjectName required='required'}}
-  <button {{action 'createNewProject'}}>Create</button>
+  <div class="new-project-inputs {{ if newProjectFormIsVisible 'visible' }}">
+    <label for="new-project-name">Create a new project</label>
+    {{input id="new-project-name" type="text" value=newProjectName required='required'}}
+  </div>
+  <button {{action 'newProjectClick'}}>Create</button>
 </div>
-{{else}}
-<div class="new-project">
-  <button {{action 'showNewProjectForm'}}>Create</button>
-</div>
-{{/if}}

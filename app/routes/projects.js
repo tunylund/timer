@@ -2,17 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   
-  model: function(params) {
-    return this.store.find('project')
+  model: function() {
+    return this.store.findAll('project')
   },
 
-  actions: {
-
-    error: function(error, transition) {
-      // Return true to bubble this event to any parent route.
-      return true;
-    }
-
+  setupController: function(controller, model) {
+    this._super(controller, model);
+    this.controllerFor('application').set('title', '')
   }
 
 });

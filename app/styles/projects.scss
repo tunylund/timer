@@ -1,12 +1,27 @@
+input[type=text] {
+  display: block;
+  width: 100%;
+  margin: 0 0 .5em;
+  color: $primary;
+  padding: .5em .75em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset;
+  border: none;
+}
+
 .new-project {
   margin-top: 5em;
+  margin-bottom: 2em;
 
-  input {
-    display: block;
-    width: 100%;
-    margin: 0 0 .5em;
-    color: $primary;
-    padding: .5em;
+  .new-project-inputs {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 150ms ease-in-out;
+
+    &.visible {
+      height: 29px + 45px + 8px;
+      opacity: 1;
+    }
   }
 
   button {
@@ -14,11 +29,13 @@
     display: block;
     width: 100%;
     background-color: darken($primary, 1);
-    border: solid 1px $primary1;
+    border: none;
     outline: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    padding: .5em;
 
     &:hover, &:focus {
-      box-shadow: 0 0 2px 2px rgba(0,0,0,.05);
+      box-shadow: 0 .5em 1em 0 rgba(0, 0, 0, .25);
     }
     &:active {
       box-shadow: 0 0 2px 2px rgba(0,0,0,.05) inset;
@@ -34,13 +51,22 @@
   text-decoration: none;
   background: lighten($primary, 5);
   color: $primary2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset;
+  outline: none;
+  max-width: 100%;
+  text-transform: capitalize;
 
-  &:hover, &:focus {
-    box-shadow: 0px .5em 1em 0em rgba(0,0,0,0.25);
+  h2 {
+    margin: 0;
   }
-  box-shadow: 0px 0em 0em 0em rgba(0,0,0,0.25);
+
+  &:hover, &:focus, &:active {
+    box-shadow: 0px .35em 1em 0em rgba(0,0,0,0.25) inset;
+    width: 340px;
+    outline: none;
+  }
   &:active {
-    box-shadow: 0px 0em 0em 0em rgba(0,0,0,0.25), 0px 0em .25em 0em rgba(0,0,0,0.25) inset;
+    width: 100%;
   }
 }
 
@@ -79,7 +105,7 @@
 }
 
 .today {
-  background-color: $primary1;
+  background-color: lighten($primary, 3);
   outline-offset: 0;
   padding-bottom: 1em;
 }

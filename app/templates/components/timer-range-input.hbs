@@ -1,10 +1,11 @@
-{{input 
-  id=id
-  class=className
-  name=name
-  type="range" 
-  min="0" 
-  max="24" 
-  step="0.5" 
-  value=value
-  input='setHours'}}
+<input
+  type="range"
+  min="0"
+  max="24"
+  step="0.5"
+  class={{className}}
+  value={{value}}>
+<input 
+  type="text" 
+  tabindex="{{if canNotFocus '-1'}}" 
+  value={{description}}>

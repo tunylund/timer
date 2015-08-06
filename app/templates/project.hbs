@@ -8,15 +8,19 @@
       <h2 class="month">{{day.monthLabel}}</h2>
       <h2 class="placeholder">&nbsp;</h2>
       {{/if}}
-      <div class="centered mobile-width padded ">
+      <div class="centered mobile-width">
         <div class="day-info">
-          <label for="hours-{{day.dayValue}}">
+          <label for="hours-{{day.label}}">
             <span class="day-name">{{day.dayName}}</span>
-            <span class="day-value">{{day.dayValue}}</span></label>
+            <span class="day-value">{{day.label}}</span></label>
           <span class="right-align">{{day.value}} h</span>
         </div>
         <div class="day-input">
-          {{timer-range-input label=day.dayValue value=day.value change=(action 'setHours')}}
+          {{timer-range-input 
+            label=day.label 
+            value=day.value 
+            description=day.description
+            onChange=(action 'setHours')}}
         </div>
       </div>
     </li>
