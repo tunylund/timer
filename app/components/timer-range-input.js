@@ -14,7 +14,7 @@ export default Ember.Component.extend({
   },
 
   canNotFocus: function () {
-    return this.get('value') == 0
+    return this.get('value') === 0
   }.property('value'),
 
   change: function() {
